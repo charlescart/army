@@ -14,7 +14,7 @@ final class Battle {
     public function __construct($army1, $army2) {
 //        echo $army1->getPointsOfArmy().' / ';
 //        echo $army2->getPointsOfArmy();
-        
+//        hola
     }
     
 }
