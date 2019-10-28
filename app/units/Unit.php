@@ -31,6 +31,10 @@ abstract class Unit {
         return $this->strenght * $this->quanty;
     }
     
+    public function setQuanty($quanty) {
+        $this->quanty = $quanty;
+    }
+    
     public function __toString() {
         return 'Strength: '.$this->strenght.' Quanty:'.$this->quanty;
     }
