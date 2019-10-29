@@ -18,29 +18,34 @@ $bizantinos = new Bizantinos();
  * creando un instancia de ejercito segun un una civilization
  */
 $army1 = new Army($chinos);
-echo $army1;
+echo '~> Un ejercito Chino ha sido creado<br>'.$army1;
 
-echo '<br><br> Entrenando Pikeman...';
+$army2 = new Army($ingleses);
+echo '<br><br>~> EUn ejercito Ingles ha sido creado<br>'.$army2;
+
+echo '<br><br>~> Entrenando a Piqueros...';
 $army1->traningPikeman();
 
-echo '<br> Entrenando Archery...';
+echo '<br>~> Entrenando a Arqueros...';
 $army1->traningArchery();
 
-echo '<br> Entrenando Knight...';
-$army1->traningKnigth();
+echo '<br>~> Entrenando a Caballeros...';
+$army1->traningKnight();
 
 echo '<br><br>';
-echo $army1;
+echo ''.$army1;
 
-echo '<br><br> Transfomation Pikeman to Archery';
+echo '<br><br>~> Transformando Piqueros en Arqueros';
 $army1->transformationPikeman();
 echo '<br>'.$army1;
 
-echo '<br><br> Transfomation Archery to Knight';
+echo '<br><br>~> Transformando Arqueros en Caballeros';
 $army1->transformationArchery();
 echo '<br>'.$army1;
 
-echo '<br><br> Battle de ejercitos <br>';
-$army2 = new Army($ingleses);
-$battle1 = new Battle($army1, $army2);
+echo '<br><br>~> Batalla de estos dos ejercitos se presentara <br>';
 echo $army1.'<br>'.$army2;
+$battle1 = new Battle($army1, $army2);
+echo '<br><br>~> Resultado de la batalla: (Ojo mirar consecuencias en las unidades de cada ejercito)<br>';
+echo $army1.'<br>'.$army2;
+echo '<br>'.$battle1;
