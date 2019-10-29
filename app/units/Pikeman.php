@@ -3,7 +3,7 @@
 /**
  * Description of Pikeman
  *
- * @author Charles Rodriguez
+ * @author Ing. Charles Rodriguez
  */
 
 namespace army\models;

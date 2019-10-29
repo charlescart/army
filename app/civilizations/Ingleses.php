@@ -3,7 +3,7 @@
 /**
  * Description of Chinos
  *
- * @author Charles Rodriguez
+ * @author Ing. Charles Rodriguez
  */
 
 namespace army\models;

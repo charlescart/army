@@ -2,7 +2,7 @@
 
 /**
  * Description of Batlle
- * @author Charles Rodriguez
+ * @author Ing. Charles Rodriguez
  */
 
 namespace army\models;

@@ -5,7 +5,7 @@ namespace army\models;
 /**
  * Description of Archery
  *
- * @author Charles Rodriguez
+ * @author Ing. Charles Rodriguez
  */
 class Archery extends Unit {
 
