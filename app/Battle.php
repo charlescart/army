@@ -81,12 +81,8 @@ final class Battle {
     private function removeUnitForArmy($army, $quanty) {
         $count = 0;
         foreach ($army->getPointsForUnit() as $key => $value) {
-            if(!($count < $quanty)){
-                echo 'se cumple break';
-            break;
-            }
+            if(!($count < $quanty)) break;
             if ($value == 0) continue;
-            echo '<br>'.$key.'-'.$value.' ['.$count.'/'.$quanty.']';
 
             switch ($key) {
 
@@ -94,11 +90,9 @@ final class Battle {
                     $army->removePikeman();
                     break;
                 case 'archery':
-                    echo 'quitando archerys';
                     $army->removeArchery();
                     break;
                 case 'knight':
-                    echo 'quitanto caballos';
                     $army->removeKnight();
                     break;
                 default:
