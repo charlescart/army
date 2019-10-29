@@ -9,10 +9,12 @@ namespace army\models;
 
 final class Battle {
 
-    private $status;
     private $winner;
     private $loser;
-    
+    private $deadHeat = false;
+    private $result;
+
+
     /**
      * @function: __construct
      * @params: $army1 => Primer ejercito. $army2 => Segundo ejercito.
@@ -27,7 +29,8 @@ final class Battle {
             $this->winnerProcess($army2);
             $this->loserProcess($army1);
         } else {
-            // empate
+            $this->deadHeatProcess($army1);
+            $this->deadHeatProcess($army2);
         }
     }
     
@@ -38,6 +41,8 @@ final class Battle {
      */
     private function winnerProcess($army) {
         $army->addCoins(100); // Army winner 100 coins.
+        $this->winner = $army->getCivilization();
+        $this->result .= 'Ejercito '.$army->getCivilization().' ganador! \o| |o/';
     }
 
     /**
@@ -49,10 +54,21 @@ final class Battle {
      */
     private function loserProcess($army, $quanty = 2) {
         $this->removeUnitForArmy($army, $quanty);
+        $this->loser = $army->getCivilization();
+        $this->result .= ' y Ejercito ' . $army->getCivilization() . ' perdio! T.T';
     }
 
-    private function deadHeatProcess($army1, $army2) {
-        
+    /** 
+     * @function: deadHeatProcess
+     * @params: $army1 => Instancia de ejercito uno. $army2 => Instancia de ejercito
+     * dos.
+     * @description: 
+     */
+    private function deadHeatProcess($army, $quanty = 1) {
+        $this->removeUnitForArmy($army, $quanty);
+        $this->deadHeat = true;
+        $this->result = 'Los ejercitos quedaron en empate! \o||o/';
+       
     }
     
     /**
@@ -65,18 +81,24 @@ final class Battle {
     private function removeUnitForArmy($army, $quanty) {
         $count = 0;
         foreach ($army->getPointsForUnit() as $key => $value) {
-            if($count == $quanty) break;
-            if (!$value > 0) continue;
-            
+            if(!($count < $quanty)){
+                echo 'se cumple break';
+            break;
+            }
+            if ($value == 0) continue;
+            echo '<br>'.$key.'-'.$value.' ['.$count.'/'.$quanty.']';
+
             switch ($key) {
 
                 case 'pikeman':
                     $army->removePikeman();
                     break;
                 case 'archery':
+                    echo 'quitando archerys';
                     $army->removeArchery();
                     break;
                 case 'knight':
+                    echo 'quitanto caballos';
                     $army->removeKnight();
                     break;
                 default:
@@ -85,6 +107,11 @@ final class Battle {
             
             $count++;
         }
+    }
+    
+    public function __toString() {
+        return 'Resultados Finales: <br>Ganador: '.$this->winner.'. <br> Perdedor: '.$this->loser
+          .'. <br>'.$this->result;
     }
 
 }

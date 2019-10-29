@@ -14,7 +14,12 @@ final class Army {
     private $pikeman;
     private $archery;
     private $knight;
-
+    
+    /**
+     * @function: __construct
+     * @params: $civilization => Instancia de una civilizacion.
+     * @description: Crea un ejercito segun una civilizacion dada.
+     */
     public function __construct(Civilization $civilization) {
         $this->coins = 1000;
         $this->civilization = $civilization->getOrigin();
@@ -22,7 +27,12 @@ final class Army {
         $this->archery = $civilization->getInstanceOfArchery();
         $this->knight = $civilization->getInstanceOfKnight();
     }
-
+    
+    /**
+     * @function: traningPikeman
+     * @description: Entrena la unidad de piqueros, tiene un costo de  monedas
+     * de oro y un beneficio de +3 en fuerza (strenght) a la unidad.
+     */
     public function traningPikeman() {
         $this->coins -= $this->pikeman->traning(10, 3);
     }
@@ -71,6 +81,10 @@ final class Army {
 
     public function addCoins($coins) {
         $this->coins += $coins;
+    }
+    
+    public function getCivilization() {
+        return $this->civilization;
     }
 
     public function __toString() {

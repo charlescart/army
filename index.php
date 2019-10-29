@@ -46,5 +46,6 @@ echo '<br>'.$army1;
 echo '<br><br>~> Batalla de estos dos ejercitos se presentara <br>';
 echo $army1.'<br>'.$army2;
 $battle1 = new Battle($army1, $army2);
-echo '<br><br>~> Resultado de la batalla:<br>';
+echo '<br><br>~> Resultado de la batalla: (Ojo mirar consecuencias en las unidades de cada ejercito)<br>';
 echo $army1.'<br>'.$army2;
+echo '<br>'.$battle1;
