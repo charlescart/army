@@ -1,3 +1,9 @@
+## Instalacion de proyecto
+Aplicar solo un composer install para cargar las clases de los namespace definidos.
+```
+composer install
+```
+
 # Ejercicio de modelado de ejércitos
 El ejercicio consiste en modelar ejércitos.
 
