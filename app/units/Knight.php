@@ -2,7 +2,7 @@
 
 /**
  * Description of Knight
- * @author Charles Rodriguez
+ * @author Ing. Charles Rodriguez
  */
 
 namespace army\models;
