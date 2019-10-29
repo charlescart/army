@@ -13,16 +13,18 @@ Los ejércitos poseen una cantidad inicial de piqueros, arqueros y caballeros de
 # Unidades
 Hay tres tipos de unidades: Piquero, Arquero y Caballero.
 Cada unidad posee puntos de fuerza, según la siguiente tabla:
-| Unidad | Puntos de fuerza | 
-| ---------- | :----------: |
+
+| Unidad | Puntos de Fuerza |
+| ------ | :--------------: |
 | Piquero | 5 |
 | Arquero | 10 |
 | Caballero | 20 |
 
 La cantidad inicial de unidades es determinada por la siguiente tabla:
-| Civilizacion | Piqueros | Arqueros | Caballeros | 
+
+| Civilizacion | Piqueros | Arqueros | Caballeros |
 | ------------ | :------: | :------: | :--------: |
-|Chinos        |2 | 25 | 2 |
+| Chinos | 2 | 25 | 2 |
 | Ingleses | 10 | 10 | 10 |
 | Bizandinos | 5 | 8 | 15 |
 
